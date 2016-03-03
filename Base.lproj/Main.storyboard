@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bgd-qD-A4V">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="YNF-xw-omB">
+            <objects>
+                <tableViewController id="E9x-rl-PFF" customClass="ViewController" customModule="Password" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2sz-Ae-8OS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PasswordCell" id="Syw-gA-ye4" customClass="PasswordCell" customModule="Password">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Syw-gA-ye4" id="CSv-My-CCt">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIT-2D-e6q">
+                                            <rect key="frame" x="10" y="0.0" width="549" height="44"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPb-uR-bQd">
+                                            <rect key="frame" x="535" y="6" width="32" height="32"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="LbP-aW-ptb"/>
+                                                <constraint firstAttribute="width" constant="32" id="W3a-43-5Ve"/>
+                                            </constraints>
+                                            <state key="normal" image="unlock"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bPb-uR-bQd" firstAttribute="top" secondItem="CSv-My-CCt" secondAttribute="topMargin" constant="-2" id="5Zk-O0-LdU"/>
+                                        <constraint firstItem="bPb-uR-bQd" firstAttribute="leading" secondItem="CSv-My-CCt" secondAttribute="leadingMargin" constant="527" id="Bdc-ui-WAO"/>
+                                        <constraint firstItem="JIT-2D-e6q" firstAttribute="top" secondItem="CSv-My-CCt" secondAttribute="topMargin" constant="-8" id="Eiz-2o-Glf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="JIT-2D-e6q" secondAttribute="bottom" constant="-8" id="G1k-Xn-bnK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="JIT-2D-e6q" secondAttribute="trailing" id="LG5-Ef-4gs"/>
+                                        <constraint firstItem="JIT-2D-e6q" firstAttribute="leading" secondItem="CSv-My-CCt" secondAttribute="leading" constant="10" id="a2O-HW-1Kv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bPb-uR-bQd" secondAttribute="bottom" constant="-2" id="frI-0s-bAb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bPb-uR-bQd" secondAttribute="trailing" constant="-8" id="mYv-dl-4GX"/>
+                                        <constraint firstItem="bPb-uR-bQd" firstAttribute="leading" secondItem="CSv-My-CCt" secondAttribute="leadingMargin" constant="527" id="pkq-Pc-tdO"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Bdc-ui-WAO"/>
+                                            <exclude reference="pkq-Pc-tdO"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="JIT-2D-e6q" id="PIx-cw-1IU"/>
+                                    <segue destination="P8x-ZW-JQj" kind="show" identifier="edit_password_segue" id="PmX-He-02G"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="E9x-rl-PFF" id="zD3-5P-bKY"/>
+                            <outlet property="delegate" destination="E9x-rl-PFF" id="laS-k0-lhc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="k2u-ST-x3v"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5gX-Rt-oM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-403" y="215"/>
+        </scene>
+        <!--Password Edit View Controller-->
+        <scene sceneID="2Ga-p9-iVb">
+            <objects>
+                <viewController storyboardIdentifier="PasswordEditViewController" id="P8x-ZW-JQj" customClass="PasswordEditViewController" customModule="Password" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h48-mF-MCN"/>
+                        <viewControllerLayoutGuide type="bottom" id="QmZ-rL-6zy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pHk-3b-eIg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CQv-jT-6pt">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CQv-jT-6pt" firstAttribute="top" secondItem="h48-mF-MCN" secondAttribute="bottom" constant="-64" id="8xj-y0-36b"/>
+                            <constraint firstItem="QmZ-rL-6zy" firstAttribute="top" secondItem="CQv-jT-6pt" secondAttribute="bottom" id="Sn3-yV-kha"/>
+                            <constraint firstItem="CQv-jT-6pt" firstAttribute="leading" secondItem="pHk-3b-eIg" secondAttribute="leadingMargin" id="aR4-lU-H16"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CQv-jT-6pt" secondAttribute="trailing" id="pjM-V4-6uL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextView" destination="CQv-jT-6pt" id="NHk-cf-Le3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ayF-F1-vYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-713" y="993"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sNZ-Hg-bcc">
+            <objects>
+                <navigationController id="Bgd-qD-A4V" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vw4-b6-ZYb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="E9x-rl-PFF" kind="relationship" relationship="rootViewController" id="EEf-Ay-Oo8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIg-JR-qdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-403" y="-512"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="unlock" width="32" height="32"/>
+    </resources>
+</document>
